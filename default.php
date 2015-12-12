@@ -4,15 +4,20 @@
 <meta charset="UTF-8">
 <title>開心農場</title>
 <style type="text/css">
-body {width:1300px; margin:10px auto;background-color:DarkOliveGreen; }
+body {
+background-image:url(登入農場.jpg);
+background-size:2000px 1100px;
+width:1800px;
+}
 #cont {
 width: 400px;
-margin: 20px auto;
-border-radius: 30px;
-background-color: #690;
-padding: 40px;
+margin: 250px auto;
+border-radius: 100px;
+background-color:#1E90FF;
+padding: 50px;
 color:ivory;
-font-size: 14pt;
+font-size: 20pt;
+text-align: center;
 }
 #msg {
 font-weight: bold;
@@ -27,6 +32,7 @@ font-family: Times New Roman;
 <body>
 <div id="cont">
 <form action="login.php" method="post">
+<tr><td><img src="開心農場去背景.png"></td></tr>
 <table cellpadding="5">
 <tr><td align="right">User Name: </td><td align="left"><input type="text" name="uid"></td></tr>
 <tr><td align="right">Password: </td><td align="left"><input type="password" name="pwd"></td></tr>
