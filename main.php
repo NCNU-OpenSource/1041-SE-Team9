@@ -1,18 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<style>
-#plantlist {
-    visibility:hidden;
-    //可種植列表預設為隱藏
-}
-</style>
+<link rel="stylesheet" type="text/css" href="main.css">
+<script src="functions.js"></script>
 </head>
 <body>
 <?php
-include "connMysql.php";
 session_start();
+include "connMysql.php";
+include "checklandstatus.php";
 $user=$_SESSION["username"];
+//checkland();
 ?>
 <div id="demo"><h2>開心農場</h2></div>
 
@@ -43,29 +41,34 @@ echo "升級所需經驗:$row[6]<br>";
 echo "金錢:$row[7]<br>";
 echo "<a href=\"store.php\">商店</a><br>";
 echo"<table>";
-$index=0;
+$index=1;
 for($i=0;$i<5;$i++){
     echo "<tr>";
     for($j=0;$j<5;$j++){
-        
+        $landid=$index-1;
         $disable="";
         $status="";
-        if($available[$index][2]==-1){
+        if($available[$index-1][2]==-1){
             $disabled="disabled";
             if($count<$row[8])
                 $disabled="";
             $status="尚未解鎖";
-            echo "<td><button onclick=unlock({$index}) {$disabled}>{$status}</button></td>";
+            echo "<td><button id=\"land{$index}\" title=\"{$status}\" onclick=\"unlock($index)\" {$disabled}>{$status}</button></td>";
         }
-        else if($available[$index][2]==0){
+        else if($available[$index-1][2]==0){
             $disabled="";
             $status="閒置";
-            echo "<td><button onclick=show({$index}) {$disabled}>{$status}</button></td>";
+        echo "<td><button id=\"land{$index}\" title=\"{$status}\" onclick=\"show($index)\" data=\"{$index}\" {$disabled}>{$status}</button></td>";
         }
-        else if($available[$index][2]==1){
+        else if($available[$index-1][2]==1){
             $disabled="";
             $status="生長中";
-            echo "<td><button onclick=show({$index}) {$disabled}>{$status}</button></td>";
+        echo "<td><button id=\"land{$index}\" title=\"{$status}\" onclick=\"show($index)\" value=\"{$available[$landid][3]}\" {$disabled}>{$status}</button></td>";
+        }
+        else if($available[$index-1][2]==2){
+            $disabled="";
+            $status="待採收";
+            echo "<td><button id=\"land{$index}\" title=\"{$status}\" onclick=\"get($index)\" {$disabled}>{$status}</button></td>";
         }
         $index++;
     }
@@ -77,13 +80,14 @@ for($i=0;$i<5;$i++){
 <div id="plantlist">
     <p id="whichland"></p>
     <form>
-        <label><input type="radio" id="1" name="plant" value="10" onclick="getValue(this.id)">作物1</input></label>
-        <label><input type="radio" id="2" name="plant" value="15" onclick="getValue(this.id)">作物2</input></label>
-        <label><input type="radio" id="3" name="plant" value="20" onclick="getValue(this.id)">作物3</input></label>
+        <label><input type="radio" id="plant1" name="plant" value="1" onclick="getValue(this.value)">作物1</input></label>
+        <label><input type="radio" id="plant2" name="plant" value="2" onclick="getValue(this.value)">作物2</input></label>
+        <label><input type="radio" id="plant2" name="plant" value="3" onclick="getValue(this.value)">作物3</input></label>
         <input type="button" value="確定" onclick="grow()">
     </form>
 </div>
 <script src="functions.js"></script>
+<script src="Countdown.js"></script>
 
 
 </body>
