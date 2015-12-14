@@ -94,6 +94,14 @@ function grow(){//種植作物
     xhttp.open("GET", "grow.php?plantid="+plantid+"&landid="+landId, true);
     xhttp.send();
 }
-function get(){
-    
+function get(landId){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            //document.getElementById("demo").value = xhttp.responseText;
+            location.reload(true);
+        }
+    };
+    xhttp.open("GET", "get.php?landid="+landId, true);
+    xhttp.send();
 }
