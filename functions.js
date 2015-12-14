@@ -94,3 +94,6 @@ function grow(){//種植作物
     xhttp.open("GET", "grow.php?plantid="+plantid+"&landid="+landId, true);
     xhttp.send();
 }
+function get(){
+    
+}

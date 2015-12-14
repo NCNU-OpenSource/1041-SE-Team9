@@ -63,7 +63,7 @@ for($i=0;$i<5;$i++){
         else if($available[$index-1][2]==1){
             $disabled="";
             $status="生長中";
-        echo "<td><button id=\"land{$index}\" title=\"{$status}\" onclick=\"show($index)\" value=\"{$available[$landid][3]}\" {$disabled}>{$status}</button></td>";
+        echo "<td><button id=\"land{$index}\" title=\"{$status}\" value=\"{$available[$landid][3]}\" {$disabled}>{$status}</button></td>";
         }
         else if($available[$index-1][2]==2){
             $disabled="";
@@ -79,12 +79,22 @@ for($i=0;$i<5;$i++){
 </div>
 <div id="plantlist">
     <p id="whichland"></p>
-    <form>
-        <label><input type="radio" id="plant1" name="plant" value="1" onclick="getValue(this.value)">作物1</input></label>
-        <label><input type="radio" id="plant2" name="plant" value="2" onclick="getValue(this.value)">作物2</input></label>
-        <label><input type="radio" id="plant2" name="plant" value="3" onclick="getValue(this.value)">作物3</input></label>
-        <input type="button" value="確定" onclick="grow()">
-    </form>
+    <table>
+<?php
+$sql="select * from plants";
+$result=mysqli_query($db_link,$sql);
+$index=0;
+echo"<tr>";
+while($row[$index]=mysqli_fetch_array($result)){
+    echo"<td><label><input type=\"radio\" id=\"{$row[$index]['name']}\" name=\"plants\" value=\"{$row[$index]['plantid']}\" onclick=\"getValue(this.value)\">{$row[$index]['name']}</input></label></td>";
+    //echo$index;
+    if(($index+1)%3==0)
+        echo"</tr>";
+    $index++;
+}
+?>
+        <tr><td><input type="button" value="確定" onclick="grow()"></td></tr>
+    </table>
 </div>
 <script src="functions.js"></script>
 <script src="Countdown.js"></script>
