@@ -6,8 +6,9 @@ $user=$_SESSION["username"];
 $plantid=$_GET["plantid"];
 $landid=$_GET["landid"];
 //取得種植時間
-$sql="select * from plants where id=$plantid";
+$sql="select * from plants where plantid=$plantid";
 $result=mysqli_query($db_link,$sql);
+if (!$result) die("Query Fail!".mysqli_error($db_link));
 $row=mysqli_fetch_row($result);
 $wait=$row[3];//種植時間
 

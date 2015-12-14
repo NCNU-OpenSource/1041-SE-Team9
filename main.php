@@ -7,15 +7,15 @@
 <body>
 <?php
 session_start();
-include "connMysql.php";
-include "checklandstatus.php";
+include_once "connMysql.php";
+include_once "checklandstatus.php";
 $user=$_SESSION["username"];
-//checkland();
 ?>
 <div id="demo"><h2>開心農場</h2></div>
 
 <div>
 <?php 
+//checkland();
 $sql="select * from user where id='$user'";
 $result=mysqli_query($db_link,$sql);
 $row=mysqli_fetch_row($result);

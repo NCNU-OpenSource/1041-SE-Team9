@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2015 �?12 ??06 ??23:30
+-- 產生時間： 2015 �?12 ??14 ??09:56
 -- 伺服器版本: 5.6.24
 -- PHP 版本： 5.6.8
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- 資料庫： `fin`
 --
+CREATE DATABASE IF NOT EXISTS `fin` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `fin`;
 
 -- --------------------------------------------------------
 
@@ -45,39 +47,40 @@ CREATE TABLE IF NOT EXISTS `lands` (
   `landid` int(10) NOT NULL,
   `playerid` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `status` int(2) NOT NULL,
-  `finishtime` int(20) NOT NULL
+  `finishtime` int(20) NOT NULL,
+  `plantid` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- 資料表的匯出資料 `lands`
 --
 
-INSERT INTO `lands` (`landid`, `playerid`, `status`, `finishtime`) VALUES
-(1, 'admin', 0, 0),
-(2, 'admin', 0, 0),
-(3, 'admin', 0, 0),
-(4, 'admin', 0, 0),
-(5, 'admin', -1, 0),
-(6, 'admin', -1, 0),
-(7, 'admin', -1, 0),
-(8, 'admin', -1, 0),
-(9, 'admin', -1, 0),
-(10, 'admin', -1, 0),
-(11, 'admin', -1, 0),
-(12, 'admin', -1, 0),
-(13, 'admin', -1, 0),
-(14, 'admin', -1, 0),
-(15, 'admin', -1, 0),
-(16, 'admin', -1, 0),
-(17, 'admin', -1, 0),
-(18, 'admin', -1, 0),
-(19, 'admin', -1, 0),
-(20, 'admin', -1, 0),
-(21, 'admin', -1, 0),
-(22, 'admin', -1, 0),
-(23, 'admin', -1, 0),
-(24, 'admin', -1, 0),
-(25, 'admin', -1, 0);
+INSERT INTO `lands` (`landid`, `playerid`, `status`, `finishtime`, `plantid`) VALUES
+(1, 'admin', 2, 0, 1),
+(2, 'admin', 2, 0, 1),
+(3, 'admin', 2, 0, 1),
+(4, 'admin', 2, 0, 1),
+(5, 'admin', -1, 0, 0),
+(6, 'admin', -1, 0, 0),
+(7, 'admin', -1, 0, 0),
+(8, 'admin', -1, 0, 0),
+(9, 'admin', -1, 0, 0),
+(10, 'admin', -1, 0, 0),
+(11, 'admin', -1, 0, 0),
+(12, 'admin', -1, 0, 0),
+(13, 'admin', -1, 0, 0),
+(14, 'admin', -1, 0, 0),
+(15, 'admin', -1, 0, 0),
+(16, 'admin', -1, 0, 0),
+(17, 'admin', -1, 0, 0),
+(18, 'admin', -1, 0, 0),
+(19, 'admin', -1, 0, 0),
+(20, 'admin', -1, 0, 0),
+(21, 'admin', -1, 0, 0),
+(22, 'admin', -1, 0, 0),
+(23, 'admin', -1, 0, 0),
+(24, 'admin', -1, 0, 0),
+(25, 'admin', -1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -87,7 +90,7 @@ INSERT INTO `lands` (`landid`, `playerid`, `status`, `finishtime`) VALUES
 
 DROP TABLE IF EXISTS `plants`;
 CREATE TABLE IF NOT EXISTS `plants` (
-  `id` int(10) NOT NULL,
+  `plantid` int(10) NOT NULL,
   `name` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `sellvalue` int(10) NOT NULL,
   `growtime` int(20) NOT NULL,
@@ -98,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `plants` (
 -- 資料表的匯出資料 `plants`
 --
 
-INSERT INTO `plants` (`id`, `name`, `sellvalue`, `growtime`, `expget`) VALUES
+INSERT INTO `plants` (`plantid`, `name`, `sellvalue`, `growtime`, `expget`) VALUES
 (1, 'plant1', 10, 10, 1),
 (2, 'plant2', 15, 15, 2),
 (3, 'plant3', 50, 20, 5);
@@ -172,7 +175,7 @@ ALTER TABLE `lands`
 -- 資料表索引 `plants`
 --
 ALTER TABLE `plants`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`plantid`);
 
 --
 -- 資料表索引 `test`
@@ -194,7 +197,7 @@ ALTER TABLE `user`
 -- 使用資料表 AUTO_INCREMENT `plants`
 --
 ALTER TABLE `plants`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `plantid` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- 使用資料表 AUTO_INCREMENT `test`
 --
