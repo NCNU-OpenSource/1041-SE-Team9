@@ -25,13 +25,24 @@ echo "<a href=\"main.php\">返回</a>";
 ?>
         <table>
 <?php
+$sql2="select * from bag where playerid='$user'";
+$result2=mysqli_query($db_link,$sql2);
+if (!$result2) die("Query Fail!".mysqli_error($db_link));
+$index=0;
+while($row2[$index]=mysqli_fetch_array($result2)){
+    $index++;
+}
 $sql="select * from food order by fid";
 $result=mysqli_query($db_link,$sql);
 if (!$result) die("Query Fail!".mysqli_error($db_link));
 $index=0;
 while($row[$index]=mysqli_fetch_array($result)){
     $foodid=$index+1;
-    echo"<tr><td>{$row[$index][1]}</td><td>回復體力{$row[$index][3]}</td><td>{$row[$index][2]}元</td><td><button id=\"{$foodid}\" onclick=\"buy({$foodid})\">購買</button></td></tr>";
+    echo"<tr><td>{$row[$index][1]}</td>
+    <td>回復體力{$row[$index][3]}</td>
+    <td>{$row[$index][2]}元</td>
+    <td>擁有{$row2[$index][2]}個</td>
+    <td><button id=\"{$foodid}\" onclick=\"buy({$foodid})\">購買</button></td></tr>";
     $index++;
 }
 ?>
