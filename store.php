@@ -41,7 +41,7 @@ while($row[$index]=mysqli_fetch_array($result)){
     echo"<tr><td>{$row[$index][1]}</td>
     <td>回復體力{$row[$index][3]}</td>
     <td>{$row[$index][2]}元</td>
-    <td>擁有{$row2[$index][2]}個</td>
+    <td id=\"manyFood{$foodid}\">擁有{$row2[$index][2]}個</td>
     <td><button id=\"{$foodid}\" onclick=\"buy({$foodid})\">購買</button></td></tr>";
     $index++;
 }
