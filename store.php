@@ -10,16 +10,31 @@ $row=mysqli_fetch_row($result);
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="store.css">
+        <script src="functions.js"></script>
     </head>
     <body>
 <?php
 echo "玩家名稱:$row[2]<br>";
+echo "體力:$row[3]<br>";
+echo "經驗值:$row[4]<br>";
+echo "等級:$row[5]<br>";
+echo "升級所需經驗:$row[6]<br>";
 echo "金錢:$row[7]<br>";
+echo "<a href=\"main.php\">返回</a>";
 ?>
         <table>
-            <tr><td>食物1</td><td>恢復10體力</td><td>50元</td><td><button onclick="">購買</button></td></tr>
-            <tr><td>食物2</td><td>恢復10體力</td><td>50元</td><td><button onclick="">購買</button></td></tr>
-            <tr><td>食物3</td><td>恢復10體力</td><td>50元</td><td><button onclick="">購買</button></td></tr>
+<?php
+$sql="select * from food order by fid";
+$result=mysqli_query($db_link,$sql);
+if (!$result) die("Query Fail!".mysqli_error($db_link));
+$index=0;
+while($row[$index]=mysqli_fetch_array($result)){
+    $foodid=$index+1;
+    echo"<tr><td>{$row[$index][1]}</td><td>回復體力{$row[$index][3]}</td><td>{$row[$index][2]}元</td><td><button id=\"{$foodid}\" onclick=\"buy(this.id)\">購買</button></td></tr>";
+    $index++;
+}
+?>
         </table>
     </body>
 </html>
