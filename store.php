@@ -31,7 +31,7 @@ if (!$result) die("Query Fail!".mysqli_error($db_link));
 $index=0;
 while($row[$index]=mysqli_fetch_array($result)){
     $foodid=$index+1;
-    echo"<tr><td>{$row[$index][1]}</td><td>回復體力{$row[$index][3]}</td><td>{$row[$index][2]}元</td><td><button id=\"{$foodid}\" onclick=\"buy(this.id)\">購買</button></td></tr>";
+    echo"<tr><td>{$row[$index][1]}</td><td>回復體力{$row[$index][3]}</td><td>{$row[$index][2]}元</td><td><button id=\"{$foodid}\" onclick=\"buy({$foodid})\">購買</button></td></tr>";
     $index++;
 }
 ?>
