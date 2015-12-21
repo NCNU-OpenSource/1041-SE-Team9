@@ -89,3 +89,16 @@ function buy(foodId){
     xhttp.open("GET", "buy.php?foodid="+foodId, true);
     xhttp.send();
 }
+function eat(foodId){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            var data = JSON.parse(xhttp.responseText);
+            document.getElementById("playerEnergy").innerHTML = "體力:"+data[0];
+            document.getElementById("manyFood"+foodId).innerHTML = "擁有"+data[1]+"個";
+            document.getElementById("warn").innerHTML = data[2];
+        }
+    };
+    xhttp.open("GET", "eat.php?foodid="+foodId, true);
+    xhttp.send();
+}

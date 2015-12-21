@@ -62,10 +62,7 @@ if (!$result) die("Query Fail!".mysqli_error($db_link));
 $row=mysqli_fetch_array($result);
 $playerMoney=$row['money'];//買完之後的玩家金錢
 
-
 send_data:
 $arr=Array($warn,$playerMoney,$row2[2]);
-
 echo json_encode($arr);
-
 ?>
