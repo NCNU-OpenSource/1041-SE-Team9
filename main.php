@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="refresh" content="30" />
 <link rel="stylesheet" type="text/css" href="main.css">
 <script src="functions.js"></script>
 </head>
@@ -33,13 +34,16 @@ for($i=0;$i<sizeof($available)-1;$i++){
     if($available[$i][2]>=0)
         $count++;//玩家可解鎖農地的數量
 }
-echo "玩家名稱:$row[2]<br>";
-echo "體力:$row[3]<br>";
-echo "經驗值:$row[4]<br>";
-echo "等級:$row[5]<br>";
-echo "升級所需經驗:$row[6]<br>";
-echo "金錢:$row[7]<br>";
-echo "<a href=\"store.php\">商店</a><br>";
+echo "<table>";
+echo "<tr><td>玩家名稱:$row[2]</td><tr>";
+echo "<tr><td>體力:$row[3]</td><tr>";
+echo "<tr><td>經驗值:$row[4]</td><tr>";
+echo "<tr><td>等級:$row[5]</td><tr>";
+echo "<tr><td>升級所需經驗:$row[6]</td><tr>";
+echo "<tr><td id=\"playerMoney\">金錢:$row[7]</td><tr>";
+echo "</table>";
+echo "<a href=\"store.php\">商店</a> ";
+echo "<a href=\"bag.php\">背包</a><br>";
 echo"<table>";
 $index=1;
 for($i=0;$i<5;$i++){

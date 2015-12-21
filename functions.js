@@ -16,49 +16,22 @@ window.onload = function(){
                 msgAfter: "完成",
                 onEnd: function(){
                     setTimeout(function(){ location.reload(true); }, 1000);
-                    /*var xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function() {
-                        if (xhttp.readyState == 4 && xhttp.status == 200) {
-                            document.getElementById("demo").innerHTML = xhttp.responseText;
-                            console.log("check123");
-                            //location.reload(true);
-                        }
-                    };
-                    console.log("check");
-                    xhttp.open("GET", "checklandstatus.php", true);
-                    xhttp.send();*/
-                    //location.reload(true);
-                    //location.href="main.php";
                 }
             });
         }
     }
 }
-function checklandstatus(landid){
-    /*var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {
-            //document.getElementById("demo").innerHTML = xhttp.responseText;
-            location.reload(true);
-        }
-    };
-    xhttp.open("GET", "checklandstatus.php", true);
-    xhttp.send();*/
-}
 function unlock(landIdShow) {//解鎖農地
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            //document.getElementById("demo").innerHTML = xhttp.responseText;
             location.reload(true);
         }
     };
     xhttp.open("GET", "unlock.php?landid="+landIdShow, true);
     xhttp.send();
 }
-function show(landIdShow){//顯示可種植列表
-    //var land=document.getElementById("land"+landid);
-    //var landIdShow = this.getAttribute ("data");
+function show(landIdShow){
     console.log(landIdShow);
     document.getElementById("whichland").innerHTML = landIdShow+"號農地";
     landId=landIdShow;
@@ -87,7 +60,6 @@ function grow(){//種植作物
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            //document.getElementById("demo").value = xhttp.responseText;
             location.reload(true);
         }
     };
@@ -98,10 +70,22 @@ function get(landId){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            //document.getElementById("demo").value = xhttp.responseText;
             location.reload(true);
         }
     };
     xhttp.open("GET", "get.php?landid="+landId, true);
+    xhttp.send();
+}
+function buy(foodId){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            var data = JSON.parse(xhttp.responseText);
+            document.getElementById("warn").innerHTML = data[0];
+            document.getElementById("playerMoney").innerHTML = "金錢:"+data[1];
+            document.getElementById("manyFood"+foodId).innerHTML = "擁有"+data[2]+"個";
+        }
+    };
+    xhttp.open("GET", "buy.php?foodid="+foodId, true);
     xhttp.send();
 }

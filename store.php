@@ -15,12 +15,14 @@ $row=mysqli_fetch_row($result);
     </head>
     <body>
 <?php
-echo "玩家名稱:$row[2]<br>";
-echo "體力:$row[3]<br>";
-echo "經驗值:$row[4]<br>";
-echo "等級:$row[5]<br>";
-echo "升級所需經驗:$row[6]<br>";
-echo "金錢:$row[7]<br>";
+echo "<table>";
+echo "<tr><td>玩家名稱:$row[2]</td><tr>";
+echo "<tr><td>體力:$row[3]</td><tr>";
+echo "<tr><td>經驗值:$row[4]</td><tr>";
+echo "<tr><td>等級:$row[5]</td><tr>";
+echo "<tr><td>升級所需經驗:$row[6]</td><tr>";
+echo "<tr><td id=\"playerMoney\">金錢:$row[7]</td><tr>";
+echo "</table>";
 echo "<a href=\"main.php\">返回</a>";
 ?>
         <table>
@@ -47,5 +49,6 @@ while($row[$index]=mysqli_fetch_array($result)){
 }
 ?>
         </table>
+        <p id="warn"></p>
     </body>
 </html>
