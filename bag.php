@@ -1,8 +1,6 @@
 <?php
 include "connMysql.php";
-session_start();
-$user=$_SESSION["username"];
-
+include_once "islogin.php";
 $sql="select * from user where id='$user'";
 $result=mysqli_query($db_link,$sql);
 $row=mysqli_fetch_row($result);
