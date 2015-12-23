@@ -102,3 +102,18 @@ function eat(foodId){
     xhttp.open("GET", "eat.php?foodid="+foodId, true);
     xhttp.send();
 }
+
+function fuckyou(){
+    var xhttp = new XMLHttpRequest();
+    var uid = encodeURIComponent(document.getElementById("uid").value);
+    var pwd = encodeURIComponent(document.getElementById("pwd").value);
+    var parameters="uid="+uid+"&pwd="+pwd;
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            document.getElementById("result").innerHTML = xhttp.responseText;
+        }
+    };
+    xhttp.open("POST", "login.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send(parameters);
+}
