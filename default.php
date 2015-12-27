@@ -3,8 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <title>開心農場</title>
+<<<<<<< HEAD
 <link rel=stylesheet type="text/css" href="login.css">
+<<<<<<< HEAD
 <script src="functions.js"></script>
+=======
+=======
+<style type="text/css">
+body {
+background-image:url(登入農場.jpg);
+background-size:2000px 1100px;
+width:1800px;
+}
+#cont {
+width: 400px;
+margin: 250px auto;
+border-radius: 100px;
+background-color:#1E90FF;
+padding: 50px;
+color:ivory;
+font-size: 20pt;
+text-align: center;
+}
+#msg {
+font-weight: bold;
+color:red;
+}
+input {
+font-size: 14pt;
+font-family: Times New Roman;
+}
+</style>
+>>>>>>> origin/master
+>>>>>>> parent of e5bb5b7... 將登入頁面的css獨立出來
 </head>
 <body>
 <div id="cont">
