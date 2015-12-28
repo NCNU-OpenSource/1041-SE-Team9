@@ -9,7 +9,7 @@
 <body>
 <div id="cont">
 <form action="login.php" method="post">
-<div id="farm"><tr><td><img src="開心農場去背景.png"></td></tr>
+<div id="farm"><tr><td><img src="img/開心農場去背景.png"></td></tr>
 </div>
 <table cellpadding="5">
 <tr><td align="right">User Name: </td><td align="left"><input type="text" style="border:3px green double;" id="uid" name="uid"></td></tr>
