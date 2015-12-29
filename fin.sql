@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2015 �?12 ??14 ??11:41
+-- 產生時間： 2015 �?12 ??29 ??16:13
 -- 伺服器版本: 5.6.24
 -- PHP 版本： 5.6.8
 
@@ -25,6 +25,29 @@ USE `fin`;
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `bag`
+--
+
+DROP TABLE IF EXISTS `bag`;
+CREATE TABLE IF NOT EXISTS `bag` (
+  `playerid` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `foodid` int(10) NOT NULL,
+  `number` int(10) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `bag`
+--
+
+INSERT INTO `bag` (`playerid`, `foodid`, `number`) VALUES
+('admin', 1, 0),
+('admin', 2, 14),
+('admin', 3, 0),
+('admin', 4, 19);
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `food`
 --
 
@@ -35,6 +58,16 @@ CREATE TABLE IF NOT EXISTS `food` (
   `price` int(10) NOT NULL,
   `recovery` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `food`
+--
+
+INSERT INTO `food` (`fid`, `name`, `price`, `recovery`) VALUES
+(1, '食物1', 10, 1),
+(2, '食物2', 70, 70),
+(3, '食物3', 30, 30),
+(4, '食物4', 15, 15);
 
 -- --------------------------------------------------------
 
@@ -56,10 +89,10 @@ CREATE TABLE IF NOT EXISTS `lands` (
 --
 
 INSERT INTO `lands` (`landid`, `playerid`, `status`, `finishtime`, `plantid`) VALUES
-(1, 'admin', 0, 0, 1),
-(2, 'admin', 0, 0, 1),
-(3, 'admin', 0, 0, 1),
-(4, 'admin', 0, 0, 1),
+(1, 'admin', 0, 0, 0),
+(2, 'admin', 0, 0, 0),
+(3, 'admin', 0, 0, 0),
+(4, 'admin', 0, 0, 0),
 (5, 'admin', -1, 0, 0),
 (6, 'admin', -1, 0, 0),
 (7, 'admin', -1, 0, 0),
@@ -104,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `plants` (
 INSERT INTO `plants` (`plantid`, `name`, `sellvalue`, `growtime`, `expget`) VALUES
 (1, 'plant1', 10, 10, 1),
 (2, 'plant2', 15, 15, 2),
-(3, 'plant3', 50, 20, 5),
+(3, 'plant3', 50, 60, 5),
 (4, '作物4', 10, 30, 10),
 (5, '作物5', 25, 20, 37),
 (6, '作物6', 72, 36, 9);
@@ -152,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `pw`, `name`, `energy`, `exp`, `level`, `exptonext`, `money`, `landsavaliable`) VALUES
-('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'ViperLiu1', 100, 0, 1, 0, 100, 4),
+('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'ViperLiu1', 100, 53, 1, 0, 0, 4),
 ('admin2', '315f166c5aca63a157f7d41007675cb44a948b33', 'ViperLiu2', 100, 0, 1, 0, 100, 4),
 ('admin3', '7c222fb2927d828af22f592134e8932480637c0d', 'ViperLiu3', 100, 0, 1, 0, 100, 4),
 ('admin4', 'ea053d11a8aad1ccf8c18f9241baeb9ec47e5d64', 'ViperLiu4', 100, 0, 1, 0, 100, 4),
@@ -161,6 +194,12 @@ INSERT INTO `user` (`id`, `pw`, `name`, `energy`, `exp`, `level`, `exptonext`, `
 --
 -- 已匯出資料表的索引
 --
+
+--
+-- 資料表索引 `bag`
+--
+ALTER TABLE `bag`
+  ADD PRIMARY KEY (`playerid`,`foodid`);
 
 --
 -- 資料表索引 `food`
