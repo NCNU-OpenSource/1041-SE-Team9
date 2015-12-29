@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
 <meta http-equiv="refresh" content="30" />
+<meta charset="utf-8">
   <title>開心農場</title>
-  <link rel="stylesheet" type="text/css" href="main.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
+  
 <script src="functions.js">
 $(function() {
     $( "#dialog" ).dialog({
@@ -70,15 +72,14 @@ echo "經驗值:$row[4]";
 echo "等級:$row[5]";
 echo "升級所需經驗:$row[6]";
 echo "<tr><td id=\"playerMoney\">金錢:$row[7]</td><tr>";
-
 ?>
 </p>
 </div>
-
 <button id="opener"><img src="img/農夫.jpg"></button>
+
 <div id="shop" >
 <?php
-echo "<h1><a href=\"store.php\"><img  id=shop  src=img/商店.jpg ></a></h1><br>";
+echo "<h1><a href=\"store.php\"><img  id=shop  src=img/商店.jpg></a></h1>";
 ?>
 </div>
 <div id="ground" >
