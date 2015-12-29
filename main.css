@@ -1,4 +1,12 @@
 #plantlist {
     visibility:hidden;
     //可種植列表預設為隱藏
+	position:absolute;top:500px;left:550px;
+}
+#shop {
+	position:absolute;top:280px;left:20px;
+	
+}
+#ground{
+	position:absolute;top:400px;left:600px;
 }
