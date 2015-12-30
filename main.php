@@ -78,14 +78,14 @@ for($i=0;$i<sizeof($available)-1;$i++){
     <div id="content">
         <div id="sidebar">
             <div id="info">
-                <button id="opener"><img src="img/農夫.jpg"></button>
+                <button id="opener" style="background-color: transparent"; ><img src="img/農夫(去背過).png"></button>
             </div>
 
             <div id="shop" >
-                <a href="store.php"><img  id="shop" title="商店" src="img/商店.jpg"></a>
+                <a href="store.php"><img  id="shop" title="商店" src="img/商店(去背過).png"></a>
             </div>
             <div id="bag" >
-                <a href="bag.php"><img  id="bag" title="背包" src="img/背包.jpg" width="200" height="150"></a>
+                <a href="bag.php"><img  id="bag" title="背包" src="img/背包(去背過).png" width="200" height="150"></a>
             </div>
         </div>
         <div id="ground">
