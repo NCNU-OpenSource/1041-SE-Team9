@@ -1,13 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-<meta http-equiv="refresh" content="30" />
-
-=======
 <!--meta http-equiv="refresh" content="30" / -->
 <meta charset="utf-8">
->>>>>>> origin/master
   <title>開心農場</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="main.css">
@@ -68,87 +63,6 @@ for($i=0;$i<sizeof($available)-1;$i++){
         $count++;//玩家可解鎖農地的數量
 }
 ?>
-<<<<<<< HEAD
-<div id="dialog" title="玩家資訊">
-  <p>
- <?php 
-echo "玩家名稱:$row[2]<br>";
-echo "體力:$row[3]<br>";
-echo "經驗值:$row[4]<br>";
-echo "等級:$row[5]<br>";
-echo "升級所需經驗:$row[6]<br>";
-echo "<tr><td id=\"playerMoney\">金錢:$row[7]</td><tr>";
-
-?>
-</p>
-</div>
-<button id="opener"><img src="img/農夫.jpg"></button>
-
-<div id="shop" >
-<?php
-echo "<a href=\"store.php\"><img  id=shop  src=img/商店.jpg></a>";
-?>
-</div>
-<div id="ground" >
-<?php
-echo"<table>";
-$index=1;
-for($i=0;$i<5;$i++){
-    echo "<tr>";
-    for($j=0;$j<5;$j++){
-        $landid=$index-1;
-        $disable="";
-        $status="";
-        if($available[$index-1][2]==-1){
-            $disabled="disabled";
-            if($count<$row[8])
-                $disabled="";
-            $status="<h2>尚未解鎖</h2>";
-            echo "<td><button id=\"land{$index}\" title=\"{$status}\" onclick=\"unlock($index)\" {$disabled}>{$status}</button></td>";
-        }
-        else if($available[$index-1][2]==0){
-            $disabled="";
-            $status="<h1>閒置</h1>";
-        echo "<td><button id=\"land{$index}\" title=\"{$status}\" onclick=\"show($index)\" data=\"{$index}\" {$disabled}>{$status}</button></td>";
-        }
-        else if($available[$index-1][2]==1){
-            $disabled="";
-            $status="<h3>生長中</h3>";
-        echo "<td><button id=\"land{$index}\" title=\"{$status}\" value=\"{$available[$landid][3]}\" {$disabled}>{$status}</button></td>";
-        }
-        else if($available[$index-1][2]==2){
-            $disabled="";
-            $status="<h4>待採收</h4>";
-            echo "<td><button id=\"land{$index}\" title=\"{$status}\" onclick=\"get($index)\" {$disabled}>{$status}</button></td>";
-        }
-        $index++;
-    }
-    echo "</tr>";
-}
-?>
-</div>
-    </table>
-</div>
-<div id="plantlist">
-    <p id="whichland"></p>
-    <table>
-<?php
-$sql="select * from plants";
-$result=mysqli_query($db_link,$sql);
-$index=0;
-echo"<tr>";
-while($row[$index]=mysqli_fetch_array($result)){
-    echo"<td><label><input type=\"radio\" id=\"{$row[$index]['name']}\" name=\"plants\" value=\"{$row[$index]['plantid']}\" onclick=\"getValue(this.value)\">{$row[$index]['name']}</input></label></td>";
-    //echo$index;
-    if(($index+1)%3==0)
-        echo"</tr>";
-    $index++;
-}
-?>
-        <tr><td><input type="button" value="確定" onclick="grow()"></td></tr>
-    </table>
-</div>
-=======
     <div id="dialog" title="玩家資訊">
      <?php 
     echo "<table>";

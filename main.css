@@ -1,11 +1,7 @@
 #plantlist {
     visibility:hidden;
     //可種植列表預設為隱藏
-<<<<<<< HEAD
-	position:absolute;top:500px;left:1350px;
-=======
 	//position:absolute;top:500px;left:600px;
->>>>>>> origin/master
 }
 #shop {
 	//position:absolute;top:280px;left:20px;
@@ -15,9 +11,6 @@
     //float:left;
 }
 #ground{
-<<<<<<< HEAD
-	position:absolute;top:400px;left:300px;
-=======
 	//position:absolute;top:400px;left:600px;
     //margin:0px auto;
     float:left;
@@ -45,5 +38,4 @@
     margin:0px auto;
     width:1000px;
     height:600px;
->>>>>>> origin/master
 }
