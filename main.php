@@ -85,7 +85,7 @@ for($i=0;$i<sizeof($available)-1;$i++){
                 <a href="store.php"><img  id="shop"  src="img/商店.jpg"></a>
             </div>
             <div id="bag" >
-                <a href="bag.php"><img  id="bag"  src="#"></a>
+                <a href="bag.php"><img  id="bag"  src="img/背包.jpg" width="200" height="150"></a>
             </div>
         </div>
         <div id="ground">
