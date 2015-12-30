@@ -78,7 +78,7 @@ for($i=0;$i<sizeof($available)-1;$i++){
     <div id="content">
         <div id="sidebar">
             <div id="info">
-                <button id="opener" style="background-color: transparent"; ><img src="img/農夫(去背過).png"></button>
+                <submit id="opener" style="background-color: transparent" ; ><img src="img/農夫(去背過).png"></button>
             </div>
 
             <div id="shop" >
