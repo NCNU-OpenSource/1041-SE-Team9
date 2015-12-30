@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="refresh" content="30" />
-<meta charset="utf-8">
+
   <title>開心農場</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="main.css">
@@ -65,13 +65,13 @@ for($i=0;$i<sizeof($available)-1;$i++){
 <div id="dialog" title="玩家資訊">
   <p>
  <?php 
-echo "<table>";
-echo "玩家名稱:$row[2]";
-echo "體力:$row[3]";
-echo "經驗值:$row[4]";
-echo "等級:$row[5]";
-echo "升級所需經驗:$row[6]";
+echo "玩家名稱:$row[2]<br>";
+echo "體力:$row[3]<br>";
+echo "經驗值:$row[4]<br>";
+echo "等級:$row[5]<br>";
+echo "升級所需經驗:$row[6]<br>";
 echo "<tr><td id=\"playerMoney\">金錢:$row[7]</td><tr>";
+
 ?>
 </p>
 </div>
@@ -79,11 +79,12 @@ echo "<tr><td id=\"playerMoney\">金錢:$row[7]</td><tr>";
 
 <div id="shop" >
 <?php
-echo "<h1><a href=\"store.php\"><img  id=shop  src=img/商店.jpg></a></h1>";
+echo "<a href=\"store.php\"><img  id=shop  src=img/商店.jpg></a>";
 ?>
 </div>
 <div id="ground" >
 <?php
+echo"<table>";
 $index=1;
 for($i=0;$i<5;$i++){
     echo "<tr>";
