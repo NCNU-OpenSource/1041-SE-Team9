@@ -82,10 +82,10 @@ for($i=0;$i<sizeof($available)-1;$i++){
             </div>
 
             <div id="shop" >
-                <a href="store.php"><img  id="shop"  src="img/商店.jpg"></a>
+                <a href="store.php"><img  id="shop" title="商店" src="img/商店.jpg"></a>
             </div>
             <div id="bag" >
-                <a href="bag.php"><img  id="bag"  src="img/背包.jpg" width="200" height="150"></a>
+                <a href="bag.php"><img  id="bag" title="背包" src="img/背包.jpg" width="200" height="150"></a>
             </div>
         </div>
         <div id="ground">
