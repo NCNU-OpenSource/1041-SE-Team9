@@ -148,7 +148,6 @@ for($i=0;$i<sizeof($available)-1;$i++){
             </table>
         </div>
     </div>
->>>>>>> origin/master
 <script src="functions.js"></script>
 <script src="Countdown.js"></script>
 </body>
