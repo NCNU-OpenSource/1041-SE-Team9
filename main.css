@@ -1,3 +1,9 @@
+body {
+background: url(img/農場.jpg) center center fixed no-repeat;
+-moz-background-size: cover;
+background-size: cover;
+
+}
 #plantlist {
     visibility:hidden;
     //可種植列表預設為隱藏
