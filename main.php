@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<!--meta http-equiv="refresh" content="30" / -->
+<meta http-equiv="refresh" content="60" />
 <meta charset="utf-8">
   <title>開心農場</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -112,7 +112,7 @@ for($i=0;$i<sizeof($available)-1;$i++){
                         }
                         else if($available[$index-1][2]==1){
                             $disabled="";
-                            $status="<div id=land><p id=\"land{$index}\" value=\"{$available[$landid][3]}\" title=\"生長中\">生長中</p></div>";
+                            $status="<div id=land><p id=\"land{$index}\" data-end=\"{$available[$landid][3]}\" title=\"生長中\">生長中</p></div>";
                         echo "<td><button value=\"{$available[$landid][3]}\" {$disabled}>{$status}</button></td>";
                         }
                         else if($available[$index-1][2]==2){

@@ -7,11 +7,13 @@ window.onload = function(){
     for(var i=1;i<=25;i++){
         if(document.getElementById("land"+i).title=="生長中"){
             landid=i;
+            var x=document.getElementById("land"+i);
+            var x2=x.getAttribute("data-end");
             var countdown = new Countdown({
                 selector: "#land"+i,
                 msgPattern: "{minutes} 分 {seconds} 秒",
                 dateStart: new Date(),
-                dateEnd: new Date((document.getElementById("land"+i).value)*1000),
+                dateEnd: new Date(x2*1000),
                 msgBefore: null,
                 msgAfter: "完成",
                 onEnd: function(){
