@@ -21,7 +21,6 @@ echo "<tr><td>等級:$row[5]</td><tr>";
 echo "<tr><td>升級所需經驗:$row[6]</td><tr>";
 echo "<tr><td id=\"playerMoney\">金錢:$row[7]</td><tr>";
 echo "</table>";
-echo "<a href=\"main.php\">返回</a>";
 ?>
         <table border=1>
 <?php
@@ -43,6 +42,10 @@ while($row2[$index]=mysqli_fetch_array($result2)){
 }
 ?>
         </table>
+        
+<div id="backmain" >
+    <a href="main.php"><img  id="backmain" title="返回農場" src="img/返回用箭頭.png" width="50"></a>
+</div>
         <p id="warn"></p>
     </body>
 </html>
