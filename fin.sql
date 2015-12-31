@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2015 �?12 ??29 ??16:13
+-- 產生時間： 2016 �?01 ??01 ??00:15
 -- 伺服器版本: 5.6.24
 -- PHP 版本： 5.6.8
 
@@ -118,6 +118,43 @@ INSERT INTO `lands` (`landid`, `playerid`, `status`, `finishtime`, `plantid`) VA
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `levels`
+--
+
+DROP TABLE IF EXISTS `levels`;
+CREATE TABLE IF NOT EXISTS `levels` (
+  `level` int(3) NOT NULL,
+  `exp` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `levels`
+--
+
+INSERT INTO `levels` (`level`, `exp`) VALUES
+(2, 34),
+(3, 57),
+(4, 92),
+(5, 135),
+(6, 372),
+(7, 560),
+(8, 840),
+(9, 1242),
+(10, 1242),
+(11, 1242),
+(12, 1242),
+(13, 1242),
+(14, 1242),
+(15, 1490),
+(16, 1788),
+(17, 2415),
+(18, 2574),
+(19, 3088),
+(20, 3705);
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `plants`
 --
 
@@ -128,19 +165,21 @@ CREATE TABLE IF NOT EXISTS `plants` (
   `sellvalue` int(10) NOT NULL,
   `growtime` int(20) NOT NULL,
   `expget` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- 資料表的匯出資料 `plants`
 --
 
 INSERT INTO `plants` (`plantid`, `name`, `sellvalue`, `growtime`, `expget`) VALUES
-(1, 'plant1', 10, 10, 1),
-(2, 'plant2', 15, 15, 2),
-(3, 'plant3', 50, 60, 5),
-(4, '作物4', 10, 30, 10),
-(5, '作物5', 25, 20, 37),
-(6, '作物6', 72, 36, 9);
+(1, '可可', 3113, 60, 10),
+(2, '小麥', 1000, 90, 1),
+(3, '蘋果', 614, 600, 20),
+(4, '橘子', 215, 1800, 35),
+(5, '葡萄', 123, 3600, 50),
+(6, '香蕉', 500, 21600, 42),
+(7, '稻米', 200, 43200, 90),
+(8, '人參', 1, 86400, 80);
 
 -- --------------------------------------------------------
 
@@ -185,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `pw`, `name`, `energy`, `exp`, `level`, `exptonext`, `money`, `landsavaliable`) VALUES
-('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'ViperLiu1', 100, 53, 1, 0, 0, 4),
+('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'ViperLiu1', 73, 153, 1, 0, 4013, 4),
 ('admin2', '315f166c5aca63a157f7d41007675cb44a948b33', 'ViperLiu2', 100, 0, 1, 0, 100, 4),
 ('admin3', '7c222fb2927d828af22f592134e8932480637c0d', 'ViperLiu3', 100, 0, 1, 0, 100, 4),
 ('admin4', 'ea053d11a8aad1ccf8c18f9241baeb9ec47e5d64', 'ViperLiu4', 100, 0, 1, 0, 100, 4),
@@ -214,6 +253,12 @@ ALTER TABLE `lands`
   ADD PRIMARY KEY (`landid`,`playerid`);
 
 --
+-- 資料表索引 `levels`
+--
+ALTER TABLE `levels`
+  ADD PRIMARY KEY (`level`);
+
+--
 -- 資料表索引 `plants`
 --
 ALTER TABLE `plants`
@@ -239,7 +284,7 @@ ALTER TABLE `user`
 -- 使用資料表 AUTO_INCREMENT `plants`
 --
 ALTER TABLE `plants`
-  MODIFY `plantid` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `plantid` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- 使用資料表 AUTO_INCREMENT `test`
 --
