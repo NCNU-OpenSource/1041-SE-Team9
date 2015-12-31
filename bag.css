@@ -4,3 +4,9 @@
     position:relative;
     left:200px;
 }
+#info
+{
+    position:relative;
+    left:200px;
+    top:-200px;
+}
