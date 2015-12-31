@@ -1,6 +1,6 @@
 /*bag的css*/
-#backmain/*按鈕靠右對齊*/
+#backmain/*按鈕位置*/
 {
-    position:absolute;
-    right:0px;
+    position:relative;
+    left:200px;
 }

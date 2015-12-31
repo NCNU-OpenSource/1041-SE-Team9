@@ -11,8 +11,12 @@ $row=mysqli_fetch_row($result);
         <link rel="stylesheet" type="text/css" href="store.css">
         <link rel="stylesheet" type="text/css" href="bag.css">
         <script src="functions.js"></script>
+        <title>背包</title>
     </head>
     <body>
+<div id="playerimage">
+    <h1><img id="playerimage" src="img/農夫(去背過).png"></h1>
+</div>
 <?php
 echo "<table border=1 >";
 echo "<tr><td>玩家名稱:$row[2]</td><tr>";
@@ -20,7 +24,7 @@ echo "<tr><td id=\"playerEnergy\">體力:$row[3]</td><tr>";
 echo "<tr><td>經驗值:$row[4]</td><tr>";
 echo "<tr><td>等級:$row[5]</td><tr>";
 echo "<tr><td>升級所需經驗:$row[6]</td><tr>";
-echo "<tr><td id=\"playerMoney\">金錢:$row[7]</td><tr>";
+echo "<tr><td id=\"playerMoney\">金錢:$$row[7]</td><tr>";
 echo "</table>";
 ?>
         <table border=1>
