@@ -29,27 +29,28 @@ $row=mysqli_fetch_row($result);
         echo "</table>";
     ?>
 </div>
-        <table border=1>
-<?php
-$sql2="SELECT food.name,food.recovery,bag.number FROM bag,food WHERE fid=foodid and playerid='{$user}'";
-$result2=mysqli_query($db_link,$sql2);
-if (!$result2) die("Query Fail!".mysqli_error($db_link));
-$index=0;
-while($row2[$index]=mysqli_fetch_array($result2)){
-    $foodid=$index+1;
-    if($row2[$index][2]<=0){
-        $index++;
-        continue;
-    }
-    echo"<tr><td>{$row2[$index][0]}</td>
-    <td>回復體力{$row2[$index][1]}</td>
-    <td id=\"manyFood{$foodid}\">擁有{$row2[$index][2]}個</td>
-    <td><button id=\"{$foodid}\" onclick=\"eat({$foodid})\">使用</button></td></tr>";
-    $index++;
-}
-?>
-        </table>
-        
+<div id="foodinbag">
+    <table border=1>
+        <?php
+        $sql2="SELECT food.name,food.recovery,bag.number FROM bag,food WHERE fid=foodid and playerid='{$user}'";
+        $result2=mysqli_query($db_link,$sql2);
+        if (!$result2) die("Query Fail!".mysqli_error($db_link));
+        $index=0;
+        while($row2[$index]=mysqli_fetch_array($result2)){
+            $foodid=$index+1;
+            if($row2[$index][2]<=0){
+                $index++;
+                continue;
+            }
+            echo"<tr><td>{$row2[$index][0]}</td>
+            <td>回復體力{$row2[$index][1]}</td>
+            <td id=\"manyFood{$foodid}\">擁有{$row2[$index][2]}個</td>
+            <td><button id=\"{$foodid}\" onclick=\"eat({$foodid})\">使用</button></td></tr>";
+            $index++;
+        }
+        ?>
+    </table>
+</div>        
 <div id="backmain" >
     <a href="main.php"><img  id="backmain" title="返回農場" src="img/返回用箭頭.png" width="50"></a>
 </div>

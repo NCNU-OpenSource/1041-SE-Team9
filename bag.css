@@ -1,4 +1,12 @@
 /*bag的css*/
+body
+{   
+    border-color:#FFCC99;
+    border-width:10px;
+    border-style:solid;
+    background-color:#a7cece;
+    margin:150px;
+}
 #backmain/*按鈕位置*/
 {
     position:relative;
@@ -9,4 +17,11 @@
     position:relative;
     left:200px;
     top:-200px;
+}
+#foodinbag
+{
+    position:relative;  
+    top:-350px;
+    left:350px;    
+    
 }
