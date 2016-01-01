@@ -1,27 +1,33 @@
 /*bag的css*/
-body
+body/*整體*/
 {   
     border-color:#FFCC99;
     border-width:10px;
-    border-style:solid;
+    border-style:inset;
     background-color:#a7cece;
     margin:150px;
+    border-radius:50px;
 }
-#backmain/*按鈕位置*/
-{
-    position:relative;
-    left:200px;
-}
-#info
+#info/*玩家資料*/
 {
     position:relative;
     left:200px;
     top:-200px;
 }
-#foodinbag
+#foodinbag/*背包*/
 {
+    border-style:double;
+    border-color:black;
+    border-width:1px;
     position:relative;  
     top:-350px;
     left:350px;    
-    
+    margin-right:500px;
+    margin-bottom:10px;
+    background-color:url('農夫(去背過).png');
+}
+#backmain/*按鈕位置*/
+{
+    position:relative;
+    left:750px;
 }

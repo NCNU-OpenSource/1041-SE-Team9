@@ -19,7 +19,7 @@ $row=mysqli_fetch_row($result);
 </div>
 <div id="info">
     <?php
-        echo "<table border=1 >";
+        echo "<table>";
         echo "<tr><td>玩家名稱:$row[2]</td><tr>";
         echo "<tr><td id=\"playerEnergy\">體力:$row[3]</td><tr>";
         echo "<tr><td>經驗值:$row[4]</td><tr>";
@@ -30,7 +30,7 @@ $row=mysqli_fetch_row($result);
     ?>
 </div>
 <div id="foodinbag">
-    <table border=1>
+    <table  ALIGN="center" CELLSPACING="20" >
         <?php
         $sql2="SELECT food.name,food.recovery,bag.number FROM bag,food WHERE fid=foodid and playerid='{$user}'";
         $result2=mysqli_query($db_link,$sql2);
