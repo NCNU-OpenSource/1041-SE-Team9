@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-01-05 08:42:15
+-- 產生時間： 2016-01-05 08:55:13
 -- 伺服器版本: 5.6.26
 -- PHP 版本： 5.6.12
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- 資料庫： `fin`
 --
+CREATE DATABASE IF NOT EXISTS `fin` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `fin`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- 資料表結構 `bag`
 --
 
+DROP TABLE IF EXISTS `bag`;
 CREATE TABLE IF NOT EXISTS `bag` (
   `playerid` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `foodid` int(10) NOT NULL,
@@ -48,6 +51,7 @@ INSERT INTO `bag` (`playerid`, `foodid`, `number`) VALUES
 -- 資料表結構 `food`
 --
 
+DROP TABLE IF EXISTS `food`;
 CREATE TABLE IF NOT EXISTS `food` (
   `fid` int(10) NOT NULL,
   `name` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
@@ -71,6 +75,7 @@ INSERT INTO `food` (`fid`, `name`, `price`, `recovery`) VALUES
 -- 資料表結構 `lands`
 --
 
+DROP TABLE IF EXISTS `lands`;
 CREATE TABLE IF NOT EXISTS `lands` (
   `landid` int(10) NOT NULL,
   `playerid` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -85,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `lands` (
 
 INSERT INTO `lands` (`landid`, `playerid`, `status`, `finishtime`, `plantid`) VALUES
 (1, 'admin', 0, 0, 0),
-(2, 'admin', 1, 1451979795, 2),
+(2, 'admin', 2, 0, 2),
 (3, 'admin', 0, 0, 0),
 (4, 'admin', 0, 0, 0),
 (5, 'admin', -1, 0, 0),
@@ -116,6 +121,7 @@ INSERT INTO `lands` (`landid`, `playerid`, `status`, `finishtime`, `plantid`) VA
 -- 資料表結構 `levels`
 --
 
+DROP TABLE IF EXISTS `levels`;
 CREATE TABLE IF NOT EXISTS `levels` (
   `level` int(3) NOT NULL,
   `exp` int(10) NOT NULL
@@ -152,6 +158,7 @@ INSERT INTO `levels` (`level`, `exp`) VALUES
 -- 資料表結構 `plants`
 --
 
+DROP TABLE IF EXISTS `plants`;
 CREATE TABLE IF NOT EXISTS `plants` (
   `plantid` int(10) NOT NULL,
   `name` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
@@ -180,6 +187,7 @@ INSERT INTO `plants` (`plantid`, `name`, `sellvalue`, `growtime`, `expget`) VALU
 -- 資料表結構 `test`
 --
 
+DROP TABLE IF EXISTS `test`;
 CREATE TABLE IF NOT EXISTS `test` (
   `id` int(10) NOT NULL,
   `value` int(10) NOT NULL
@@ -198,6 +206,7 @@ INSERT INTO `test` (`id`, `value`) VALUES
 -- 資料表結構 `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `pw` char(40) COLLATE utf8_unicode_ci NOT NULL,
