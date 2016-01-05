@@ -30,5 +30,6 @@ body/*整體*/
 #backmain/*按鈕位置*/
 {
     position:relative;
-    left:750px;
+    left:0px;
+    top:-110px;
 }
