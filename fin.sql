@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.11
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016 �?01 ??01 ??00:15
--- 伺服器版本: 5.6.24
--- PHP 版本： 5.6.8
+-- 產生時間： 2016-01-05 08:42:15
+-- 伺服器版本: 5.6.26
+-- PHP 版本： 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,13 +14,11 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- 資料庫： `fin`
 --
-CREATE DATABASE IF NOT EXISTS `fin` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `fin`;
 
 -- --------------------------------------------------------
 
@@ -28,7 +26,6 @@ USE `fin`;
 -- 資料表結構 `bag`
 --
 
-DROP TABLE IF EXISTS `bag`;
 CREATE TABLE IF NOT EXISTS `bag` (
   `playerid` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `foodid` int(10) NOT NULL,
@@ -40,10 +37,10 @@ CREATE TABLE IF NOT EXISTS `bag` (
 --
 
 INSERT INTO `bag` (`playerid`, `foodid`, `number`) VALUES
-('admin', 1, 0),
+('admin', 1, 14),
 ('admin', 2, 14),
-('admin', 3, 0),
-('admin', 4, 19);
+('admin', 3, 2),
+('admin', 4, 20);
 
 -- --------------------------------------------------------
 
@@ -51,7 +48,6 @@ INSERT INTO `bag` (`playerid`, `foodid`, `number`) VALUES
 -- 資料表結構 `food`
 --
 
-DROP TABLE IF EXISTS `food`;
 CREATE TABLE IF NOT EXISTS `food` (
   `fid` int(10) NOT NULL,
   `name` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
@@ -64,10 +60,10 @@ CREATE TABLE IF NOT EXISTS `food` (
 --
 
 INSERT INTO `food` (`fid`, `name`, `price`, `recovery`) VALUES
-(1, '食物1', 10, 1),
-(2, '食物2', 70, 70),
-(3, '食物3', 30, 30),
-(4, '食物4', 15, 15);
+(1, '麵包', 5000, 10),
+(2, 'Redbull', 50000, 55),
+(3, '七七乳加巧克力', 75000, 60),
+(4, '便當', 10000, 15);
 
 -- --------------------------------------------------------
 
@@ -75,7 +71,6 @@ INSERT INTO `food` (`fid`, `name`, `price`, `recovery`) VALUES
 -- 資料表結構 `lands`
 --
 
-DROP TABLE IF EXISTS `lands`;
 CREATE TABLE IF NOT EXISTS `lands` (
   `landid` int(10) NOT NULL,
   `playerid` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -90,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `lands` (
 
 INSERT INTO `lands` (`landid`, `playerid`, `status`, `finishtime`, `plantid`) VALUES
 (1, 'admin', 0, 0, 0),
-(2, 'admin', 0, 0, 0),
+(2, 'admin', 1, 1451979795, 2),
 (3, 'admin', 0, 0, 0),
 (4, 'admin', 0, 0, 0),
 (5, 'admin', -1, 0, 0),
@@ -121,7 +116,6 @@ INSERT INTO `lands` (`landid`, `playerid`, `status`, `finishtime`, `plantid`) VA
 -- 資料表結構 `levels`
 --
 
-DROP TABLE IF EXISTS `levels`;
 CREATE TABLE IF NOT EXISTS `levels` (
   `level` int(3) NOT NULL,
   `exp` int(10) NOT NULL
@@ -158,7 +152,6 @@ INSERT INTO `levels` (`level`, `exp`) VALUES
 -- 資料表結構 `plants`
 --
 
-DROP TABLE IF EXISTS `plants`;
 CREATE TABLE IF NOT EXISTS `plants` (
   `plantid` int(10) NOT NULL,
   `name` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
@@ -187,7 +180,6 @@ INSERT INTO `plants` (`plantid`, `name`, `sellvalue`, `growtime`, `expget`) VALU
 -- 資料表結構 `test`
 --
 
-DROP TABLE IF EXISTS `test`;
 CREATE TABLE IF NOT EXISTS `test` (
   `id` int(10) NOT NULL,
   `value` int(10) NOT NULL
@@ -206,7 +198,6 @@ INSERT INTO `test` (`id`, `value`) VALUES
 -- 資料表結構 `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `pw` char(40) COLLATE utf8_unicode_ci NOT NULL,
@@ -224,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `pw`, `name`, `energy`, `exp`, `level`, `exptonext`, `money`, `landsavaliable`) VALUES
-('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'ViperLiu1', 73, 153, 1, 0, 4013, 4),
+('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'ViperLiu1', 99, 363, 5, 372, 19255, 4),
 ('admin2', '315f166c5aca63a157f7d41007675cb44a948b33', 'ViperLiu2', 100, 0, 1, 0, 100, 4),
 ('admin3', '7c222fb2927d828af22f592134e8932480637c0d', 'ViperLiu3', 100, 0, 1, 0, 100, 4),
 ('admin4', 'ea053d11a8aad1ccf8c18f9241baeb9ec47e5d64', 'ViperLiu4', 100, 0, 1, 0, 100, 4),

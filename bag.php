@@ -42,7 +42,23 @@ $row=mysqli_fetch_row($result);
                 $index++;
                 continue;
             }
-            echo"<tr><td>{$row2[$index][0]}</td>
+            if($foodid==1)
+            {
+              echo"<tr><td><img src=\"img\麵包.png\"  alt=\"麵包\" height=\"100\" width=\"100\"></td>";
+            }
+            if($foodid==2)
+            {
+              echo"<tr><td><img src=\"img\Redbull.png\"  alt=\"Redbull\" height=\"100\" width=\"60\" td align=\"center\"></td>";
+            }
+            if($foodid==3)
+            {
+              echo"<tr><td><img src=\"img\七七乳加巧克力.png\"  alt=\"七七乳加巧克力\" height=\"100\" width=\"100\"></td>";
+            }
+            if($foodid==4)
+            {
+              echo"<tr><td><img src=\"img\便當.png\"  alt=\"便當\" height=\"100\" width=\"100\"></td>";
+            }
+            echo"           
             <td>回復體力{$row2[$index][1]}</td>
             <td id=\"manyFood{$foodid}\">擁有{$row2[$index][2]}個</td>
             <td><button id=\"{$foodid}\" onclick=\"eat({$foodid})\">使用</button></td></tr>";
