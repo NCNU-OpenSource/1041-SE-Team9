@@ -35,7 +35,7 @@ function unlock(landIdShow) {//解鎖農地
 }
 function show(landIdShow){
     console.log(landIdShow);
-    document.getElementById("whichland").innerHTML = landIdShow+"號農地";
+    //document.getElementById("whichland").innerHTML = landIdShow+"號農地";
     landId=landIdShow;
     if(visible==false){
         document.getElementById("plantlist").style.visibility = "visible";
@@ -43,7 +43,7 @@ function show(landIdShow){
     }
     else if(visible==true){
         if(landIdShow!=tmp){
-            document.getElementById("whichland").innerHTML = landIdShow+"號農地";
+            //document.getElementById("whichland").innerHTML = landIdShow+"號農地";
             landId=landIdShow;
         }
         else{

@@ -89,7 +89,7 @@ for($i=0;$i<sizeof($available)-1;$i++){
             </div>
         </div>
         <div id="ground">
-            <table style="align:center;">
+            <table id="groungtable" style="align:center;">
                 <?php
                 $index=1;
                 for($i=0;$i<5;$i++){
@@ -103,22 +103,22 @@ for($i=0;$i<sizeof($available)-1;$i++){
                             if($count<$row[8])
                                 $disabled="";
                             $status="<div id=land><p id=\"land{$index}\">尚未解鎖</p></div>";
-                            echo "<td><button onclick=\"unlock($index)\" {$disabled}>{$status}</button></td>";
+                            echo "<td id=\"singleland\"><button onclick=\"unlock($index)\" {$disabled}>{$status}</button></td>";
                         }
                         else if($available[$index-1][2]==0){
                             $disabled="";
                             $status="<div id=land><p id=\"land{$index}\">閒置</p></div>";
-                        echo "<td><button onclick=\"show($index)\" data=\"{$index}\" {$disabled}>{$status}</button></td>";
+                        echo "<td id=\"singleland\"><button onclick=\"show($index)\" data=\"{$index}\" {$disabled}>{$status}</button></td>";
                         }
                         else if($available[$index-1][2]==1){
                             $disabled="";
                             $status="<div id=land><p id=\"land{$index}\" data-end=\"{$available[$landid][3]}\" title=\"生長中\">生長中</p></div>";
-                        echo "<td><button value=\"{$available[$landid][3]}\" {$disabled}>{$status}</button></td>";
+                        echo "<td id=\"singleland\"><button value=\"{$available[$landid][3]}\" {$disabled}>{$status}</button></td>";
                         }
                         else if($available[$index-1][2]==2){
                             $disabled="";
                             $status="<div id=land><p id=\"land{$index}\">待採收</p></div>";
-                            echo "<td><button onclick=\"get($index)\" {$disabled}>{$status}</button></td>";
+                            echo "<td id=\"singleland\"><button onclick=\"get($index)\" {$disabled}>{$status}</button></td>";
                         }
                         $index++;
                     }
@@ -127,17 +127,16 @@ for($i=0;$i<sizeof($available)-1;$i++){
                 ?>
                 <tr><td colspan="5">
                     <div id="plantlist">
-                        <p id="whichland"></p>
-                        <table>
+                        <table id="plantlisttable">
                             <?php
                             $sql="select * from plants";
                             $result=mysqli_query($db_link,$sql);
                             $index=0;
                             echo"<tr>";
                             while($row[$index]=mysqli_fetch_array($result)){
-                                echo"<td><label><input type=\"radio\" id=\"{$row[$index]['name']}\" name=\"plants\" value=\"{$row[$index]['plantid']}\" onclick=\"getValue(this.value)\">{$row[$index]['name']}</input></label></td>";
+                            echo"<td id=\"list\"><label><input type=\"radio\" id=\"{$row[$index]['name']}\" name=\"plants\" value=\"{$row[$index]['plantid']}\" onclick=\"getValue(this.value)\">{$row[$index]['name']}<br><img src=\"img/plant{$index}.png\"  height=\"60px\"></img></label></td>";
                                 //echo$index;
-                                if(($index+1)%3==0)
+                                if(($index+1)%5==0)
                                     echo"</tr>";
                                 $index++;
                             }

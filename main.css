@@ -6,6 +6,7 @@ background-size: cover;
 }
 #plantlist {
     visibility:hidden;
+    background-color:rgba(0%, 0%, 0%, 0.3);
     //可種植列表預設為隱藏
 	//position:absolute;top:500px;left:600px;
 }
@@ -19,8 +20,9 @@ background-size: cover;
 #ground{
 	//position:absolute;top:400px;left:600px;
     //margin:0px auto;
+    //background-color:rgba(0%, 0%, 0%, 0.3);
     float:left;
-    width:60%;
+    width:65%;
     margin:10px;
 }
 #land{
@@ -44,4 +46,16 @@ background-size: cover;
     margin:0px auto;
     width:1000px;
     height:600px;
+}
+#list:hover{
+    background-color:rgba(0%, 0%, 100%, 0.5);
+}
+#groundtable{
+    width:1000px;
+}
+#singleland{
+    width:120px;
+}
+#list{
+    width:120px;
 }
