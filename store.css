@@ -1,0 +1,12 @@
+#good{
+    
+	float:left;
+    width:37%;
+    margin:50px;
+}
+#backmain/*按鈕位置*/
+{
+    position:absolute;
+    left:780px;
+    top:350px;
+}
