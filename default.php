@@ -17,6 +17,8 @@
 <tr><td id="result" colspan="2"></td></tr>
 <tr><td colspan="2" align="center">
 <input type="button" onclick="fuckyou()" value="登入" name="login"></tr>
+<tr><td colspan="2" align="center">
+<input type="button" onclick="location.href='Userpage.php'" value="註冊" name="sign up"></tr>
 </table>
 </div>
 <script src="functions.js"></script>
