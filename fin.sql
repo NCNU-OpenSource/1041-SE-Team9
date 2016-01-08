@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-01-05 08:55:13
--- 伺服器版本: 5.6.26
--- PHP 版本： 5.6.12
+-- 產生時間： 2016 �?01 ??08 ??12:02
+-- 伺服器版本: 5.6.24
+-- PHP 版本： 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,12 +14,12 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- 資料庫： `fin`
 --
-CREATE DATABASE IF NOT EXISTS `fin` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `fin` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `fin`;
 
 -- --------------------------------------------------------
@@ -72,6 +72,31 @@ INSERT INTO `food` (`fid`, `name`, `price`, `recovery`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `landnumber`
+--
+
+DROP TABLE IF EXISTS `landnumber`;
+CREATE TABLE IF NOT EXISTS `landnumber` (
+  `level` int(10) NOT NULL,
+  `number` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 資料表的匯出資料 `landnumber`
+--
+
+INSERT INTO `landnumber` (`level`, `number`) VALUES
+(1, 4),
+(10, 5),
+(12, 6),
+(14, 7),
+(16, 8),
+(18, 9),
+(20, 10);
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `lands`
 --
 
@@ -89,8 +114,8 @@ CREATE TABLE IF NOT EXISTS `lands` (
 --
 
 INSERT INTO `lands` (`landid`, `playerid`, `status`, `finishtime`, `plantid`) VALUES
-(1, 'admin', 0, 0, 0),
-(2, 'admin', 2, 0, 2),
+(1, 'admin', 1, 1452310650, 8),
+(2, 'admin', 0, 0, 0),
 (3, 'admin', 0, 0, 0),
 (4, 'admin', 0, 0, 0),
 (5, 'admin', -1, 0, 0),
@@ -178,7 +203,7 @@ INSERT INTO `plants` (`plantid`, `name`, `sellvalue`, `growtime`, `expget`) VALU
 (4, '橘子', 215, 1800, 35),
 (5, '葡萄', 123, 3600, 50),
 (6, '香蕉', 500, 21600, 42),
-(7, '稻米', 200, 43200, 90),
+(7, '甘蔗', 200, 43200, 90),
 (8, '人參', 1, 86400, 80);
 
 -- --------------------------------------------------------
@@ -224,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `pw`, `name`, `energy`, `exp`, `level`, `exptonext`, `money`, `landsavaliable`) VALUES
-('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'ViperLiu1', 99, 363, 5, 372, 19255, 4),
+('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'ViperLiu1', 98, 364, 5, 372, 20255, 4),
 ('admin2', '315f166c5aca63a157f7d41007675cb44a948b33', 'ViperLiu2', 100, 0, 1, 0, 100, 4),
 ('admin3', '7c222fb2927d828af22f592134e8932480637c0d', 'ViperLiu3', 100, 0, 1, 0, 100, 4),
 ('admin4', 'ea053d11a8aad1ccf8c18f9241baeb9ec47e5d64', 'ViperLiu4', 100, 0, 1, 0, 100, 4),
@@ -245,6 +270,12 @@ ALTER TABLE `bag`
 --
 ALTER TABLE `food`
   ADD PRIMARY KEY (`fid`);
+
+--
+-- 資料表索引 `landnumber`
+--
+ALTER TABLE `landnumber`
+  ADD PRIMARY KEY (`level`);
 
 --
 -- 資料表索引 `lands`
