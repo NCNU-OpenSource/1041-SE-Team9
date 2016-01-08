@@ -1,12 +1,47 @@
-#good{
+/*#good{
     
 	float:left;
     width:37%;
     margin:50px;
-}
-#backmain/*按鈕位置*/
+}*/
+/*#backmain/*按鈕位置
 {
     position:absolute;
     left:780px;
     top:350px;
+}*/
+/*bag的css*/
+body/*整體*/
+{   
+    border-color:#FFCC99;
+    border-width:10px;
+    border-style:inset;
+    background-color:#a7cece;
+    margin:150px;
+    border-radius:50px;
+}
+#info/*玩家資料*/
+{
+    position:relative;
+    left:200px;
+    top:-200px;
+}
+#good/*商品架*/
+{
+    border-style:double;
+    border-color:black;
+    border-width:1px;
+    position:relative;  
+    top:-350px;
+    left:350px;    
+    margin-right:500px;
+    margin-bottom:10px;
+    background-image:url(img/櫃子.jpg) ;
+    background-size:100% auto;
+}
+#backmain/*按鈕位置*/
+{
+    position:relative;
+    left:740px;
+    top:-10px;
 }

@@ -8,7 +8,7 @@ $row=mysqli_fetch_row($result);
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="store.css">
+        <!--link rel="stylesheet" type="text/css" href="store.css"-->
         <link rel="stylesheet" type="text/css" href="bag.css">
         <script src="functions.js"></script>
         <title>背包</title>
