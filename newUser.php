@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>無標題文件</title>
+<link rel="stylesheet" type="text/css" href="signup.css"></link>
 </head>
 
 <body>
