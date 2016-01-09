@@ -102,23 +102,23 @@ for($i=0;$i<sizeof($available)-1;$i++){
                             $disabled="disabled";
                             if($count<$row[8])
                                 $disabled="";
-                            $status="<div id=land><p id=\"land{$index}\">尚未解鎖</p></div>";
-                            echo "<td id=\"singleland\"><button onclick=\"unlock($index)\" {$disabled}>{$status}</button></td>";
+                            $status="<div id=\"lland\"><p id=\"land{$index}\"></p></div>";//尚未解鎖
+                            echo "<td id=\"singleland\"><button id=\"lockedland\" onclick=\"unlock($index)\" {$disabled}>{$status}</button></td>";
                         }
                         else if($available[$index-1][2]==0){
                             $disabled="";
-                            $status="<div id=land><p id=\"land{$index}\">閒置</p></div>";
-                        echo "<td id=\"singleland\"><button onclick=\"show($index)\" data=\"{$index}\" {$disabled}>{$status}</button></td>";
+                            $status="<div id=\"land\"><p id=\"land{$index}\">閒置</p></div>";//閒置
+                        echo "<td id=\"singleland\"><button id=\"unuse\" onclick=\"show($index)\" data=\"{$index}\" {$disabled}>{$status}</button></td>";
                         }
                         else if($available[$index-1][2]==1){
                             $disabled="";
-                            $status="<div id=land><p id=\"land{$index}\" data-end=\"{$available[$landid][3]}\" title=\"生長中\">生長中</p></div>";
-                        echo "<td id=\"singleland\"><button value=\"{$available[$landid][3]}\" {$disabled}>{$status}</button></td>";
+                            $status="<div id=\"land\"><p id=\"land{$index}\" data-end=\"{$available[$landid][3]}\" title=\"生長中\"></p></div>";//生長中
+                        echo "<td id=\"singleland\"><button id=\"growing\" value=\"{$available[$landid][3]}\" {$disabled}>{$status}</button></td>";
                         }
                         else if($available[$index-1][2]==2){
                             $disabled="";
-                            $status="<div id=land><p id=\"land{$index}\">待採收</p></div>";
-                            echo "<td id=\"singleland\"><button onclick=\"get($index)\" {$disabled}>{$status}</button></td>";
+                            $status="<div id=\"land\"><p id=\"land{$index}\">待採收</p></div>";//待採收
+                            echo "<td id=\"singleland\"><button id=\"waiting\" onclick=\"get($index)\" {$disabled}>{$status}</button></td>";
                         }
                         $index++;
                     }
