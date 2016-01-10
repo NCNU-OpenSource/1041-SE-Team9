@@ -1,8 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<style>
+p{
+width: 40%;
+    height: 50%;
+    margin-left:auto; 
+    margin-right:auto;
+    border-radius: 100px;
+    background-color:#1E90FF;
+    padding: 50px;
+    color:ivory;
+    font-size: 25pt;
+    text-align: center;
+}
 
-
-
+</style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>新使用者</title>
@@ -11,7 +23,8 @@
 
 <body>
 <audio src="music/background.mp3" autoplay="true" loop="true" hidden="true"></audio>
-<p>insert new user</p>
+
+<p align="center">insert new user</p>
 
 <?php
 include"connMysql.php";
@@ -55,6 +68,7 @@ if ($id) {
 ?>
 
 
-<p><a href="default.php">回登入畫面</a></p>
+<p align="center"><a href="default.php">回登入畫面</a></p>
+
 </body>
 </html>
