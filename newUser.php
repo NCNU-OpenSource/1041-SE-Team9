@@ -22,7 +22,6 @@ width: 40%;
 </head>
 
 <body>
-<audio src="music/background.mp3" autoplay="true" loop="true" hidden="true"></audio>
 
 <p align="center">insert new user</p>
 
