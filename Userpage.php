@@ -31,9 +31,9 @@ form{
 <body>
 
 <form name="form" method="post" action="newUser.php">
-id<input type="text" name="id" /> <br>
-password<input type="password" name="password" /> <br>
-name<input type="text" name="name" /> <br>
+id<input type="text" name="id" required/> <br>
+password<input type="password" name="password" required/> <br>
+name<input type="text" name="name" required/> <br>
 <input type="submit" name="button" value="確定" />
 </form>
 
