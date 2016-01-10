@@ -7,7 +7,7 @@
 <script src="functions.js"></script>
 </head>
 <body>
-<audio src="music/background.mp3" autoplay="true" loop="true" hidden="true"></audio>
+
 <div id="cont">
 <form action="login.php" method="post">
 <div id="farm"><tr><td><img src="img/開心農場去背景.png"></td></tr>

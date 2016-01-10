@@ -55,6 +55,6 @@ if ($id) {
 ?>
 
 
-<p><a href="default.php">回登入畫面</a></p>
+<p><a href="default2.php">回登入畫面</a></p>
 </body>
 </html>

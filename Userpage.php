@@ -29,7 +29,6 @@ form{
 </head>
 
 <body>
-<audio src="music/background.mp3" autoplay="true" loop="true" hidden="true"></audio>
 <form name="form" method="post" action="newUser.php">
 id<input type="text" name="id" required/> <br>
 password<input type="password" name="password" required/> <br>

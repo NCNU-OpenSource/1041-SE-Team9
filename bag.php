@@ -14,7 +14,7 @@ $row=mysqli_fetch_row($result);
         <title>背包</title>
     </head>
     <body>
-    <audio src="music/background.mp3" autoplay="true" loop="true" hidden="true"></audio>
+    
 <div id="playerimage">
     <h1><img id="playerimage" src="img/農夫(去背過).png"></h1>
 </div>

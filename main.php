@@ -35,7 +35,7 @@ $(function() {
 </style>
 </head>
 <body>
-<audio src="music/background.mp3" autoplay="true" loop="true" hidden="true"></audio>
+
 <?php
 include_once "islogin.php";
 include_once "connMysql.php";
