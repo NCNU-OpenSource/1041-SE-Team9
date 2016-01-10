@@ -23,6 +23,7 @@ width: 40%;
 
 <body>
 
+
 <p align="center">insert new user</p>
 
 <?php
