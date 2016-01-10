@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+<audio src="music/background.mp3" autoplay="true" loop="true" hidden="true"></audio>
 <p>insert new user</p>
 
 <?php
