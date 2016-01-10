@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+<style>
+body
+{
+    font-size: 18pt;
+    font-family: Times New Roman;
+    position:absolute;
+    top:45%;
+    left:40%;   
+}
+
+</style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>註冊頁面</title>
