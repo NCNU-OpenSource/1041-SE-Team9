@@ -1,16 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>無標題文件</title>
+<title>新使用者</title>
 <link rel="stylesheet" type="text/css" href="signup.css"></link>
 </head>
 
 <body>
 
 <p>insert new user</p>
-<hr />
-<p>
+
 <?php
 include"connMysql.php";
 
@@ -30,7 +32,7 @@ if ($id) {
     
 	$sql = "insert into user (id, pw,name,exptonext) values ('$id', '$password','$name',$row[0])";
 	mysqli_query($db_link,$sql) or die("MySQL insert user error"); //執行SQL
-	echo "註冊成功";
+	echo "註冊成功<br>";
     for($n=1;$n<=4;$n++){
     $sql="insert into lands (landid,playerid,status) values ('$n','$id','$status')";
     mysqli_query($db_link,$sql) or die("MySQL insert user error"); //執行SQL
@@ -41,7 +43,7 @@ if ($id) {
     mysqli_query($db_link,$sql) or die("MySQL insert user error"); //執行SQL
 
     }
-    echo "農地給完了";
+    echo "農地給完了<br>";
     
     for($foodid=1;$foodid<=4;$foodid++){
     $sql="insert into bag (playerid,foodid,number) values ('$id','$foodid','$status')";
@@ -51,7 +53,8 @@ if ($id) {
 	echo "註冊失敗";
 }
 ?>
-</p>
+
+
 <p><a href="default.php">回登入畫面</a></p>
 </body>
 </html>

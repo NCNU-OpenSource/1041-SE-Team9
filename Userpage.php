@@ -3,13 +3,24 @@
 <style>
 body
 {
-    font-size: 18pt;
+    font-size: 25pt;
     font-family: Times New Roman;
     position:absolute;
     top:45%;
     left:40%;   
 }
-
+form{
+    width: 40%;
+    height: 50%;
+    margin-left:auto; 
+    margin-right:auto;
+    border-radius: 100px;
+    background-color:#1E90FF;
+    padding: 50px;
+    color:ivory;
+    font-size: 25pt;
+    text-align: center;
+}
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,9 +31,9 @@ body
 <body>
 
 <form name="form" method="post" action="newUser.php">
-id：<input type="text" name="id" /> <br>
-password：<input type="password" name="password" /> <br>
-name：<input type="text" name="name" /> <br>
+id<input type="text" name="id" /> <br>
+password<input type="password" name="password" /> <br>
+name<input type="text" name="name" /> <br>
 <input type="submit" name="button" value="確定" />
 </form>
 
