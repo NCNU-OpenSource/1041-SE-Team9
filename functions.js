@@ -9,9 +9,18 @@ window.onload = function(){
             landid=i;
             var x=document.getElementById("land"+i);
             var x2=x.getAttribute("data-end");
+            var period=new Date(x2*1000)-new Date();
+            console.log(period);
+            var msg="";
+            if(period<=60000)
+                msg="{seconds}秒";
+            else if(period>60000&&period<=3600000)
+                msg="{minutes}分{seconds}秒";
+            else if(period>3600000&&period<=86400000)
+                msg="{hours}時{minutes}分{seconds}秒";
             var countdown = new Countdown({
                 selector: "#land"+i,
-                msgPattern: "{minutes} 分 {seconds} 秒",
+                msgPattern: msg,//"{minutes} 分 {seconds} 秒",
                 dateStart: new Date(),
                 dateEnd: new Date(x2*1000),
                 msgBefore: null,
