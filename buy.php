@@ -10,7 +10,7 @@ $result=mysqli_query($db_link,$sql);
 if (!$result) die("Query Fail!".mysqli_error($db_link));
 $foodNumber=mysqli_num_rows($result);//背包裡是否有這個食物
 $warn="購買成功";
-//testing123
+
 $sql="select * from food where fid=$foodid";
 $result=mysqli_query($db_link,$sql);
 if (!$result) die("Query Fail!".mysqli_error($db_link));
